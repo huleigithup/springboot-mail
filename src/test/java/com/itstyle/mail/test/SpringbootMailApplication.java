@@ -26,6 +26,6 @@ public class SpringbootMailApplication implements CommandLineRunner {
 		mail.setSubject("你个小都比");
 		mail.setContent("测试勿回");
 		mail.setTemplate("welcome");
-		mailService.sendThymeleaf(mail);
+		mailService.sendFreemarker(mail);
 	}
 }

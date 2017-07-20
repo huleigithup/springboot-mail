@@ -80,11 +80,11 @@ public class MailServiceImpl implements IMailService {
 		helper.setSubject(mail.getSubject());
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("content", mail.getContent());
-		Template template = configuration.getTemplate(mail.getTemplate());
+		Template template = configuration.getTemplate(mail.getTemplate()+".flt");
 		String text = FreeMarkerTemplateUtils.processTemplateIntoString(
 				template, model);
 		helper.setText(text, true);
-		mailSender.send(message);
+		//mailSender.send(message);
 	}
 	@Override
 	public void sendThymeleaf(Email mail) throws Exception {
@@ -97,6 +97,6 @@ public class MailServiceImpl implements IMailService {
 		context.setVariable("email", mail);
 		String text = templateEngine.process(mail.getTemplate(), context);
 		helper.setText(text, true);
-		mailSender.send(message);
+		//mailSender.send(message);
 	}
 }
