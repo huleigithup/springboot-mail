@@ -1,5 +1,4 @@
 *.class
-*.classpath
 *.gitignore
 *.settings
 # Package Files #
