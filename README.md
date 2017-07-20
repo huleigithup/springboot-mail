@@ -8,7 +8,9 @@
 - thymeleaf模版发送邮件
 
 #模版时间对比(生成1000个模版文件)
-Thymeleaf用时：2686ms
-Freemarker用时:498ms
+
+
+- Thymeleaf用时：2686ms
+- Freemarker用时:498ms
 
 对比测试，建议使用Freemarker模版
