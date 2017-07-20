@@ -4,4 +4,5 @@
 
 - 普通文本发送
 - 富文本发送(图片、附件)
-- FreeMarker模版发送邮件
+- freeMarker模版发送邮件
+- thymeleaf模版发送邮件
