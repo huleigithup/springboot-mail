@@ -22,9 +22,9 @@ public class SpringbootMailApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		Email mail = new Email();
-		mail.setEmail("2782598054@qq.com");
+		mail.setEmail("2806289796@qq.com");
 		mail.setSubject("你个小都比");
 		mail.setContent("测试勿回");
-		mailService.Send(mail);
+		mailService.sendHtml(mail);
 	}
 }
