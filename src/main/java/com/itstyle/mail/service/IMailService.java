@@ -34,7 +34,7 @@ public interface IMailService {
 	  * 2017年7月20日  科帮网 首次创建
 	  *
 	  */
-	 public void sendTemplate(Email mail) throws Exception;
+	 public void sendFreemarker(Email mail) throws Exception;
 	 /**
 	  * 模版发送 thymeleaf
 	  * @Author  科帮网

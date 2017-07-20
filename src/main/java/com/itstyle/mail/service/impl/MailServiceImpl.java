@@ -72,7 +72,7 @@ public class MailServiceImpl implements IMailService {
 	}
 
 	@Override
-	public void sendTemplate(Email mail) throws Exception {
+	public void sendFreemarker(Email mail) throws Exception {
 		MimeMessage message = mailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message, true);
 		helper.setFrom(USER_NAME);
