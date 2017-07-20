@@ -28,13 +28,13 @@ import freemarker.template.Template;
 @Service
 public class MailServiceImpl implements IMailService {
 	@Autowired
-	private JavaMailSender mailSender;
+	private JavaMailSender mailSender;//执行者
+	@Autowired
+	public Configuration configuration;//freemarker
+	@Autowired
+	private SpringTemplateEngine  templateEngine;//thymeleaf
 	@Value("${spring.mail.username}")
-	public String USER_NAME;
-	@Autowired
-	public Configuration configuration;
-	@Autowired
-	private SpringTemplateEngine  templateEngine;
+	public String USER_NAME;//发送者
 
 	@Override
 	public void send(Email mail) throws Exception {
@@ -84,7 +84,7 @@ public class MailServiceImpl implements IMailService {
 		String text = FreeMarkerTemplateUtils.processTemplateIntoString(
 				template, model);
 		helper.setText(text, true);
-		//mailSender.send(message);
+		mailSender.send(message);
 	}
 	@Override
 	public void sendThymeleaf(Email mail) throws Exception {
@@ -97,6 +97,6 @@ public class MailServiceImpl implements IMailService {
 		context.setVariable("email", mail);
 		String text = templateEngine.process(mail.getTemplate(), context);
 		helper.setText(text, true);
-		//mailSender.send(message);
+		mailSender.send(message);
 	}
 }
