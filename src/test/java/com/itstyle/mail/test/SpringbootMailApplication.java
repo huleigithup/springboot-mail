@@ -25,6 +25,6 @@ public class SpringbootMailApplication implements CommandLineRunner {
 		mail.setEmail("2806289796@qq.com");
 		mail.setSubject("你个小都比");
 		mail.setContent("测试勿回");
-		mailService.sendHtml(mail);
+		mailService.sendTemplate(mail);
 	}
 }
