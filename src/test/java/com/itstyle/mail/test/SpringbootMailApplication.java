@@ -9,6 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import com.itstyle.mail.model.Email;
 import com.itstyle.mail.service.IMailService;
 
+
 @SpringBootApplication
 @ComponentScan(basePackages={"com.itstyle.mail"})
 public class SpringbootMailApplication implements CommandLineRunner {
