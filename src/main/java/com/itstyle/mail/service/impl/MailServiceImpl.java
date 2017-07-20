@@ -14,6 +14,8 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import org.springframework.util.ResourceUtils;
+import org.thymeleaf.context.Context;
+import org.thymeleaf.spring4.SpringTemplateEngine;
 
 import com.itstyle.mail.model.Email;
 import com.itstyle.mail.service.IMailService;
@@ -31,6 +33,8 @@ public class MailServiceImpl implements IMailService {
 	public String USER_NAME;
 	@Autowired
 	public Configuration configuration;
+	@Autowired
+	private SpringTemplateEngine  templateEngine;
 
 	@Override
 	public void send(Email mail) throws Exception {
@@ -76,9 +80,22 @@ public class MailServiceImpl implements IMailService {
 		helper.setSubject(mail.getSubject());
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("content", mail.getContent());
-		Template template = configuration.getTemplate("welcome.flt");
+		Template template = configuration.getTemplate(mail.getTemplate());
 		String text = FreeMarkerTemplateUtils.processTemplateIntoString(
 				template, model);
+		helper.setText(text, true);
+		mailSender.send(message);
+	}
+	@Override
+	public void sendThymeleaf(Email mail) throws Exception {
+		MimeMessage message = mailSender.createMimeMessage();
+		MimeMessageHelper helper = new MimeMessageHelper(message, true);
+		helper.setFrom(USER_NAME);
+		helper.setTo(mail.getEmail());
+		helper.setSubject(mail.getSubject());
+		Context context = new Context();
+		context.setVariable("email", mail);
+		String text = templateEngine.process(mail.getTemplate(), context);
 		helper.setText(text, true);
 		mailSender.send(message);
 	}
