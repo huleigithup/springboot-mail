@@ -13,7 +13,7 @@ import com.itstyle.mail.service.IMailService;
 
 @SpringBootApplication
 @ComponentScan(basePackages={"com.itstyle.mail"})
-@ImportResource({"classpath:spring-context-dubbo.xml"})
+@ImportResource({"classpath:spring-context-dubbo.xml","classpath:spring-context-task.xml"})
 public class SpringbootMailApplication implements CommandLineRunner {
 	@Autowired
 	private IMailService mailService;

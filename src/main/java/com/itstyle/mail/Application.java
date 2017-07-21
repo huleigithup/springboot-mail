@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ImportResource;
  */
 @EnableAutoConfiguration
 @ComponentScan(basePackages={"com.itstyle.main"})
-@ImportResource({"classpath:spring-context-dubbo.xml"})
+@ImportResource({"classpath:spring-context-dubbo.xml","classpath:spring-context-task.xml"})
 public class Application  {
 	private static final Logger logger = Logger.getLogger(Application.class);
 	

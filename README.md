@@ -17,6 +17,7 @@
 
 #20170721
 加入DubboX对外提供发送服务
+加入定时任务统计失败邮件定时重新发送
 
 ![输入图片说明](https://blog.52itstyle.com/usr/uploads/58ad45c0b9e21.gif "在这里输入图片标题")
 
