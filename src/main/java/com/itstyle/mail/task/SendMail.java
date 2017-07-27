@@ -12,6 +12,6 @@ import org.springframework.stereotype.Component;
 public class SendMail {
 	//@Scheduled(cron = "0/5 * * * * ?")
 	public void sendMail() {
-		System.out.println("同步开始");
+		System.out.println("同步开始123");
 	}
 }
