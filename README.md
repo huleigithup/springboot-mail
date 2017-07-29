@@ -2,6 +2,15 @@
 
 邮件发送项目，附带多种实现
 
+##开发环境
+
+JDK1.7、Maven、Eclipse、SpringBoot1.5.2、spring-boot-starter-mail、spring-boot-starter-thymeleaf，spring-boot-starter-freemarker
+
+##项目结构
+
+![springboot-mail.png](https://blog.52itstyle.com/usr/uploads/2017/07/429638365.png)
+
+
 - 普通文本发送
 - 富文本发送(图片、附件)
 - freeMarker模版发送邮件
