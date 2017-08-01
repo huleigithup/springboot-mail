@@ -6,6 +6,9 @@
 
 JDK1.7、Maven、Eclipse、SpringBoot1.5.2、spring-boot-starter-mail、spring-boot-starter-thymeleaf，spring-boot-starter-freemarker
 
+##流程图
+![输入图片说明](https://git.oschina.net/uploads/images/2017/0801/190708_991f282a_87650.png "2574887637.png")
+
 ##项目结构
 
 ![springboot-mail.png](https://blog.52itstyle.com/usr/uploads/2017/07/429638365.png)
