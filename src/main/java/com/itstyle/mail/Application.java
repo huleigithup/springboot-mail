@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 /**
  * 启动类
- * 创建者 科帮网
+ * 创建者 科帮网 https://blog.52itstyle.com
  * 创建时间	2017年7月19日
  *
  */
