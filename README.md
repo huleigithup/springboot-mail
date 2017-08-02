@@ -9,6 +9,10 @@ JDK1.7、Maven、Eclipse、SpringBoot1.5.2、spring-boot-starter-mail、spring-b
 ##流程图
 ![输入图片说明](https://git.oschina.net/uploads/images/2017/0801/190708_991f282a_87650.png "2574887637.png")
 
+##欢迎关注
+
+![输入图片说明](https://git.oschina.net/uploads/images/2017/0802/192404_8b5f9807_87650.jpeg "1801066129 (1).jpg")
+
 ##友情提示
 由于工作原因，项目正在完善中，随时更新日志，有疑问请留言或者加群
 
