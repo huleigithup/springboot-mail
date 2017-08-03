@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class Email implements Serializable {
 	private static final long serialVersionUID = 1L;
 	//必填参数
-	private String email;//接收方邮件
+	private String[] email;//接收方邮件
 	private String subject;//主题
 	private String content;//邮件内容
 	//选填
@@ -25,7 +25,7 @@ public class Email implements Serializable {
 		super();
 	}
 	
-	public Email(String email, String subject, String content, String template,
+	public Email(String[] email, String subject, String content, String template,
 			HashMap<String, String> kvMap) {
 		super();
 		this.email = email;
@@ -36,10 +36,10 @@ public class Email implements Serializable {
 	}
 
 
-	public String getEmail() {
+	public String[] getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
+	public void setEmail(String[] email) {
 		this.email = email;
 	}
 	public String getSubject() {
