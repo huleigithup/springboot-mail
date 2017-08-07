@@ -21,12 +21,18 @@ public class SpringbootMailApplication implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... args) throws Exception {
-		Email mail = new Email();
-		mail.setEmail(new String[]{"2806289796@qq.com"});
-		mail.setSubject("你个小逗比");
-		mail.setContent("科帮网欢迎您");
-		mail.setTemplate("welcome");
-		mailService.sendFreemarker(mail);
+	public void run(String... args) {
+		try {
+			Email mail = new Email();
+			mail.setEmail(new String[]{"345849402@qq.com"});
+			mail.setSubject("你个小逗比");
+			mail.setContent("科帮网欢迎您");
+			mail.setTemplate("welcome");
+			for(int i=0;i<100;i++){
+				mailService.sendQueue(mail);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

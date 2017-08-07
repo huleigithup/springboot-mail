@@ -6,6 +6,8 @@ import java.util.Map;
 
 import javax.mail.internet.MimeMessage;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
@@ -18,6 +20,7 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.itstyle.mail.model.Email;
+import com.itstyle.mail.queue.MailQueue;
 import com.itstyle.mail.service.IMailService;
 import com.itstyle.mail.util.Constants;
 import com.itstyle.mail.util.MailUtil;
@@ -27,6 +30,8 @@ import freemarker.template.Template;
 
 @Service
 public class MailServiceImpl implements IMailService {
+	private static final Logger logger = LoggerFactory.getLogger(MailServiceImpl.class);
+	
 	@Autowired
 	private JavaMailSender mailSender;//执行者
 	@Autowired
@@ -38,6 +43,7 @@ public class MailServiceImpl implements IMailService {
 
 	@Override
 	public void send(Email mail) throws Exception {
+		logger.info("发送邮件：{}",mail.getContent());
 		MailUtil mailUtil = new MailUtil();
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setFrom(USER_NAME);
@@ -98,5 +104,10 @@ public class MailServiceImpl implements IMailService {
 		String text = templateEngine.process(mail.getTemplate(), context);
 		helper.setText(text, true);
 		mailSender.send(message);
+	}
+
+	@Override
+	public void sendQueue(Email mail) throws Exception {
+		MailQueue.getMailQueue().produce(mail);
 	}
 }

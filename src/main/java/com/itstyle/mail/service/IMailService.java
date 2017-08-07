@@ -46,4 +46,15 @@ public interface IMailService {
 	  *
 	  */
 	 public void sendThymeleaf(Email mail) throws Exception;
+	 /**
+	  * 队列
+	  * @Author  科帮网
+	  * @param mail
+	  * @throws Exception  void
+	  * @Date	2017年8月4日
+	  * 更新日志
+	  * 2017年8月4日  科帮网 首次创建
+	  *
+	  */
+	 public void sendQueue(Email mail) throws Exception;
 }
