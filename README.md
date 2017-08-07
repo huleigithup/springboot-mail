@@ -1,13 +1,18 @@
 #spring-boot-mail
 
-邮件发送项目，附带多种实现
+邮件发送服务，文本，附件，模板，队列，多线程，定时任务实现多种功能！！！
 
 ##开发环境
 
 JDK1.7、Maven、Eclipse、SpringBoot1.5.2、spring-boot-starter-mail、spring-boot-starter-thymeleaf，spring-boot-starter-freemarker
 
 ##流程图
+
+###平台架构
 ![输入图片说明](https://git.oschina.net/uploads/images/2017/0801/190708_991f282a_87650.png "2574887637.png")
+
+###邮件队列
+![邮件队列](https://git.oschina.net/uploads/images/2017/0804/135111_3b197795_87650.png "邮件队列.png")
 
 ##欢迎关注
 
