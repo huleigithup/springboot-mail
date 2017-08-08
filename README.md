@@ -4,6 +4,8 @@
 
 [SpringBoot开发案例之整合mail发送服务](https://blog.52itstyle.com/archives/1264/)
 
+[SpringBoot开发案例之整合mail队列篇](https://blog.52itstyle.com/archives/1385/)
+
 ## 开发环境
 
 JDK1.7、Maven、Eclipse、SpringBoot1.5.2、spring-boot-starter-mail、spring-boot-starter-thymeleaf，spring-boot-starter-freemarker
