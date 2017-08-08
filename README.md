@@ -1,10 +1,10 @@
-#spring-boot-mail
+# spring-boot-mail
 
 邮件发送服务，文本，附件，模板，队列，多线程，定时任务实现多种功能！！！
 
 [SpringBoot开发案例之整合mail发送服务](https://blog.52itstyle.com/archives/1264/)
 
-##开发环境
+## 开发环境
 
 JDK1.7、Maven、Eclipse、SpringBoot1.5.2、spring-boot-starter-mail、spring-boot-starter-thymeleaf，spring-boot-starter-freemarker
 
