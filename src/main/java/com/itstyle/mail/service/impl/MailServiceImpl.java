@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -40,6 +41,9 @@ public class MailServiceImpl implements IMailService {
 	private SpringTemplateEngine  templateEngine;//thymeleaf
 	@Value("${spring.mail.username}")
 	public String USER_NAME;//发送者
+	
+	@Autowired
+    private RedisTemplate<String, String> redisTemplate;
 
 	@Override
 	public void send(Email mail) throws Exception {
@@ -109,5 +113,9 @@ public class MailServiceImpl implements IMailService {
 	@Override
 	public void sendQueue(Email mail) throws Exception {
 		MailQueue.getMailQueue().produce(mail);
+	}
+	@Override
+	public void sendRedisQueue(Email mail) throws Exception {
+		redisTemplate.convertAndSend("mail",mail);
 	}
 }
