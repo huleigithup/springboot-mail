@@ -29,8 +29,9 @@ public class SpringbootMailApplication implements CommandLineRunner {
 			mail.setContent("科帮网欢迎您");
 			mail.setTemplate("welcome");
 			for(int i=0;i<1000;i++){
-				mailService.sendQueue(mail);
-				mailService.sendRedisQueue(mail);
+				//测试用 小心被封
+			    //mailService.sendQueue(mail);
+				//mailService.sendRedisQueue(mail);
 			}
 			
 		} catch (Exception e) {
