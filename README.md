@@ -62,7 +62,6 @@ JDK1.7、Maven、Eclipse、SpringBoot1.5.2、spring-boot-starter-mail、spring-b
 
 
 - 修改 application-dev.properties 中自己的邮件配置 同时配置dubbo.registry.address地址
-- 
 - 执行 com.itstyle.mail.test.SpringbootMailApplication main 方法
 
 
