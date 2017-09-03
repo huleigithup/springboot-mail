@@ -15,41 +15,43 @@ import java.util.concurrent.CountDownLatch;
 public class CountDownLatchDemo {
 	final static SimpleDateFormat sdf = new SimpleDateFormat(
 			"yyyy-MM-dd HH:mm:ss");
+	
+	final static String startTime = sdf.format(new Date());
 
 	public static void main(String[] args) throws InterruptedException {
-		CountDownLatch latch = new CountDownLatch(2);// 两个工人的协作
-		Worker worker1 = new Worker("zhang san", 5000, latch);
-		Worker worker2 = new Worker("li si", 8000, latch);
-		worker1.start();//
-		worker2.start();//
-		latch.await();// 等待所有工人完成工作
-		System.out.println("all work done at " + sdf.format(new Date()));
+		CountDownLatch latch = new CountDownLatch(2);// 两个赛跑者
+		Runer runer1 = new Runer("刘翔", 5000, latch);
+		Runer runer2 = new Runer("罗伯斯", 8000, latch);
+		runer1.start();//刘翔   开始跑步
+		runer2.start();//罗伯斯 开始跑步
+		latch.await();// 等待所有人赛跑结束
+		System.out.println("all runer done at " + sdf.format(new Date()));
 	}
 
-	static class Worker extends Thread {
-		String workerName;
-		int workTime;
+	static class Runer extends Thread {
+		String runerName;
+		int runTime;
 		CountDownLatch latch;
 
-		public Worker(String workerName, int workTime, CountDownLatch latch) {
-			this.workerName = workerName;
-			this.workTime = workTime;
+		public Runer(String runerName, int runTime, CountDownLatch latch) {
+			this.runerName = runerName;
+			this.runTime = runTime;
 			this.latch = latch;
 		}
 
 		public void run() {
-			System.out.println("Worker " + workerName + " do work begin at "
+			System.out.println("Runer " + runerName + " do run begin at "
+					+ startTime);
+			doRun();//跑步
+			System.out.println("Runer " + runerName + " do run complete at "
 					+ sdf.format(new Date()));
-			doWork();// 工作了
-			System.out.println("Worker " + workerName + " do work complete at "
-					+ sdf.format(new Date()));
-			latch.countDown();// 工人完成工作，计数器减一
+			latch.countDown();// 终点结束，计数器减一
 
 		}
 
-		private void doWork() {
+		private void doRun() {
 			try {
-				Thread.sleep(workTime);
+				Thread.sleep(runTime);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
