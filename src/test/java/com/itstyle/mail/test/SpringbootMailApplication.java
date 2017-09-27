@@ -24,10 +24,12 @@ public class SpringbootMailApplication implements CommandLineRunner {
 	public void run(String... args) {
 		try {
 			Email mail = new Email();
-			mail.setEmail(new String[]{"345849402@qq.com"});
+			mail.setEmail(new String[]{"2806289796@qq.com"});
 			mail.setSubject("你个小逗比");
 			mail.setContent("科帮网欢迎您");
 			mail.setTemplate("welcome");
+			mailService.send(mail);
+			mailService.sendHtml(mail);
 			for(int i=0;i<1000;i++){
 				//测试用 小心被封
 			    //mailService.sendQueue(mail);

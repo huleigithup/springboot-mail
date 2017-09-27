@@ -44,6 +44,10 @@ public class MailServiceImpl implements IMailService {
 	
 	@Autowired
     private RedisTemplate<String, String> redisTemplate;
+	
+	static {
+		 System.setProperty("mail.mime.splitlongparameters","false");
+	}
 
 	@Override
 	public void send(Email mail) throws Exception {
