@@ -31,6 +31,7 @@ JDK1.7、Maven、Eclipse、SpringBoot1.5.2、spring-boot-starter-mail、spring-b
 
 ## 项目结构
 
+```
 ├─src
 │  ├─main
 │  │  ├─java
@@ -102,6 +103,7 @@ JDK1.7、Maven、Eclipse、SpringBoot1.5.2、spring-boot-starter-mail、spring-b
 │                  └─mail
 │                      └─test
 │                              SpringbootMailApplication.java
+```
 
 
 ![springboot-mail.png](https://blog.52itstyle.com/usr/uploads/2017/07/429638365.png)
