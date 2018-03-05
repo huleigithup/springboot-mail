@@ -31,6 +31,79 @@ JDK1.7、Maven、Eclipse、SpringBoot1.5.2、spring-boot-starter-mail、spring-b
 
 ## 项目结构
 
+├─src
+│  ├─main
+│  │  ├─java
+│  │  │  └─com
+│  │  │      └─itstyle
+│  │  │          └─mail
+│  │  │              │  Application.java
+│  │  │              │  
+│  │  │              ├─demo
+│  │  │              │      CountDownLatchDemo.java
+│  │  │              │      Ticket.java
+│  │  │              │      TicketRun.java
+│  │  │              │      
+│  │  │              ├─model
+│  │  │              │      Email.java
+│  │  │              │      
+│  │  │              ├─queue
+│  │  │              │      ConsumeMailQueue.java
+│  │  │              │      MailQueue.java
+│  │  │              │      
+│  │  │              ├─redis
+│  │  │              │      Receiver.java
+│  │  │              │      RedisConfig.java
+│  │  │              │      RedisListener.java
+│  │  │              │      
+│  │  │              ├─service
+│  │  │              │  │  IMailService.java
+│  │  │              │  │  
+│  │  │              │  └─impl
+│  │  │              │          MailServiceImpl.java
+│  │  │              │          
+│  │  │              ├─task
+│  │  │              │      SendMail.java
+│  │  │              │      
+│  │  │              └─util
+│  │  │                      CommonUtil.java
+│  │  │                      Constants.java
+│  │  │                      MailUtil.java
+│  │  │                      
+│  │  ├─resources
+│  │  │  │  application-dev.properties
+│  │  │  │  application-prod.properties
+│  │  │  │  application-test.properties
+│  │  │  │  application.yml
+│  │  │  │  spring-context-dubbo.xml
+│  │  │  │  spring-context-task.xml
+│  │  │  │  
+│  │  │  └─static
+│  │  │      ├─file
+│  │  │      │      关注科帮网获取更多源码.zip
+│  │  │      │      
+│  │  │      ├─image
+│  │  │      │      springcloud.png
+│  │  │      │      
+│  │  │      └─template
+│  │  │              welcome.flt
+│  │  │              welcome.html
+│  │  │              
+│  │  └─webapp
+│  │      │  index.jsp
+│  │      │  
+│  │      └─WEB-INF
+│  │              web.xml
+│  │              
+│  └─test
+│      └─java
+│          └─com
+│              └─itstyle
+│                  └─mail
+│                      └─test
+│                              SpringbootMailApplication.java
+
+
 ![springboot-mail.png](https://blog.52itstyle.com/usr/uploads/2017/07/429638365.png)
 
 
