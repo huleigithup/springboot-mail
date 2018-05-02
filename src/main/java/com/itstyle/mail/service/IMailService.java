@@ -1,6 +1,7 @@
 package com.itstyle.mail.service;
 
-import com.itstyle.mail.model.Email;
+import com.itstyle.mail.common.model.Email;
+import com.itstyle.mail.common.model.Result;
 
 public interface IMailService {
 	 /**
@@ -36,7 +37,7 @@ public interface IMailService {
 	  */
 	 public void sendFreemarker(Email mail) throws Exception;
 	 /**
-	  * 模版发送 thymeleaf
+	  * 模版发送 thymeleaf(弃用、需要配合模板)
 	  * @Author  科帮网
 	  * @param mail
 	  * @throws Exception  void
@@ -68,4 +69,7 @@ public interface IMailService {
 	  *
 	  */
 	 public void sendRedisQueue(Email mail) throws Exception;
+	 
+	 
+	 public Result listMail(Email mail);
 }

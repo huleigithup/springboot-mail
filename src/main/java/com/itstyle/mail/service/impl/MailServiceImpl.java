@@ -2,6 +2,7 @@ package com.itstyle.mail.service.impl;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.mail.internet.MimeMessage;
@@ -20,11 +21,14 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.itstyle.mail.model.Email;
-import com.itstyle.mail.queue.MailQueue;
+import com.itstyle.mail.common.dynamicquery.DynamicQuery;
+import com.itstyle.mail.common.model.Email;
+import com.itstyle.mail.common.model.Result;
+import com.itstyle.mail.common.queue.MailQueue;
+import com.itstyle.mail.common.util.Constants;
+import com.itstyle.mail.common.util.MailUtil;
+import com.itstyle.mail.entity.OaEmail;
 import com.itstyle.mail.service.IMailService;
-import com.itstyle.mail.util.Constants;
-import com.itstyle.mail.util.MailUtil;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -32,7 +36,8 @@ import freemarker.template.Template;
 @Service
 public class MailServiceImpl implements IMailService {
 	private static final Logger logger = LoggerFactory.getLogger(MailServiceImpl.class);
-	
+	@Autowired
+	private DynamicQuery dynamicQuery;
 	@Autowired
 	private JavaMailSender mailSender;//执行者
 	@Autowired
@@ -100,6 +105,7 @@ public class MailServiceImpl implements IMailService {
 		helper.setText(text, true);
 		mailSender.send(message);
 	}
+	//弃用
 	@Override
 	public void sendThymeleaf(Email mail) throws Exception {
 		MimeMessage message = mailSender.createMimeMessage();
@@ -121,5 +127,12 @@ public class MailServiceImpl implements IMailService {
 	@Override
 	public void sendRedisQueue(Email mail) throws Exception {
 		redisTemplate.convertAndSend("mail",mail);
+	}
+
+	@Override
+	public Result listMail(Email mail) {
+		String nativeSql = "SELECT * FROM oa_email";
+		List<OaEmail> list =  dynamicQuery.nativeQueryListMap(nativeSql, new Object[]{});
+		return Result.ok(list);
 	}
 }

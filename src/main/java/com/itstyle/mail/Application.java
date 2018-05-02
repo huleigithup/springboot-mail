@@ -3,23 +3,21 @@ package com.itstyle.mail;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 /**
  * 启动类
  * 创建者 科帮网 https://blog.52itstyle.com
  * 创建时间	2017年7月19日
- *
+ * API: http://localhost:8080/springboot_mail/swagger-ui.html
  */
-@EnableAutoConfiguration
-@ComponentScan(basePackages={"com.itstyle.main"})
+@SpringBootApplication
 @ImportResource({"classpath:spring-context-dubbo.xml","classpath:spring-context-task.xml"})
 public class Application  {
 	private static final Logger logger = LoggerFactory.getLogger(Application.class);
 	
 	public static void main(String[] args) throws InterruptedException {
 		SpringApplication.run(Application.class, args);
-		logger.info("项目启动 ");
+		logger.info("邮件服务项目启动 ");
 	}
 }
