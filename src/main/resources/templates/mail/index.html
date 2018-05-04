@@ -36,9 +36,6 @@
 		</template>
 </div>
 <script type="text/javascript">
-/**
- * 订单表js
- */
 var vm = new Vue({
 	el : '#app',
 	data : {
@@ -46,7 +43,7 @@ var vm = new Vue({
 			subject:""
 		},
 		tableTitle : [ {
-			key : "receive_email",
+			key : "receiveEmail",
 			title : "接收人邮箱",
 			width : "",
 			}, {
@@ -80,9 +77,12 @@ var vm = new Vue({
 			title : "模板",
 			width : ""
 		}, {
-			key : "send_time",
+			key : "sendTime",
 			title : "发送时间",
 			width : "",
+			render: function (h, params) {  
+	            return h('div',new Date(this.row.sendTime).Format('yyyy-MM-dd'));
+	        }  
 		},],
 		consultData : [
 
@@ -105,7 +105,7 @@ var vm = new Vue({
 		see: function(){
 			dialogOpen({
 				title: '内容',
-				url: 'base/email/show.html?_' + $.now(),
+				url: '/email/show.html?_' + $.now(),
 				width: '850px',
 				height: '550px',
 				btn: null,
@@ -114,10 +114,30 @@ var vm = new Vue({
 					top.frames[iframeId].document.write(vm.msg);
 				},
 			});
-		}
+		},
+		initFormatter(){  
+		      Date.prototype.Format = function(fmt) {
+		        let o = {    
+		            "M+" : this.getMonth()+1,                 //月份    
+		            "d+" : this.getDate(),                    //日    
+		            "h+" : this.getHours(),                   //小时    
+		            "m+" : this.getMinutes(),                 //分    
+		            "s+" : this.getSeconds(),                 //秒    
+		            "q+" : Math.floor((this.getMonth()+3)/3), //季度    
+		            "S"  : this.getMilliseconds()             //毫秒    
+		        };    
+		        if(/(y+)/.test(fmt))    
+		            fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));    
+		        for(var k in o)    
+		            if(new RegExp("("+ k +")").test(fmt))    
+		             fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));    
+		        return fmt;    
+		      }  
+	   }  
 	},
 	created : function() {
 		this.list();
+		this.initFormatter();
 	}
 
 });

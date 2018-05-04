@@ -23,6 +23,7 @@ public class mailController {
 		try {
 			mailService.sendFreemarker(mail);
 		} catch (Exception e) {
+			e.printStackTrace();
 			return  Result.error();
 		}
 		return  Result.ok();

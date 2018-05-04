@@ -1,6 +1,8 @@
 package com.itstyle.mail.entity;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.Arrays;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -9,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.itstyle.mail.common.model.Email;
 @Entity
 @Table(name = "oa_email")
 public class OaEmail implements Serializable {
@@ -43,11 +47,19 @@ public class OaEmail implements Serializable {
 	/**
 	 * 发送时间
 	 */
-	private Date sendTime;
+	private Timestamp sendTime;
 	
 
 	public OaEmail() {
 		super();
+	}
+
+	public OaEmail(Email mail) {
+		this.receiveEmail = Arrays.toString(mail.getEmail());
+		this.subject = mail.getSubject();
+		this.content = mail.getContent();
+		this.template = mail.getTemplate();
+		this.sendTime = new Timestamp(new Date().getTime());
 	}
 
 	public void setId(Long id) {
@@ -92,11 +104,11 @@ public class OaEmail implements Serializable {
 		return template;
 	}
 	
-	public void setSendTime(Date sendTime) {
+	public void setSendTime(Timestamp sendTime) {
 		this.sendTime = sendTime;
 	}
 	@Column(name = "send_time", nullable = false, length = 19)
-	public Date getSendTime() {
+	public Timestamp getSendTime() {
 		return sendTime;
 	}
 	

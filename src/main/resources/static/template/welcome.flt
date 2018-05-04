@@ -66,12 +66,8 @@
                         </p>
                     </td>
                     <td style="text-align: right;">
-                        <div style=" display: inline-block;width: 120px ; padding-top: 10px; padding-right: 26px;">
+                        <div style=" display: inline-block;width: 120px ; padding-top: 10px; padding-right: 200px;">
                             <img src="${path}/image/service.jpg" alt="" style="vertical-align: top">
-                            <p style="text-align: center;">
-                                                                                                微信扫一扫
-                                <br>添加微信客服号
-                            </p>
                         </div>
                     </td>
                 </tr>

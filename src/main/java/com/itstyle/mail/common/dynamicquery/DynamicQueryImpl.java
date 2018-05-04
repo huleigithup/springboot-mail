@@ -62,7 +62,6 @@ public class DynamicQueryImpl implements DynamicQuery {
 	@Override
 	public <T> List<T> nativeQueryList(String nativeSql, Object... params) {
 		Query q = createNativeQuery(nativeSql, params);
-		//@todo develop a new approach to result transformers
 		q.unwrap(SQLQuery.class).setResultTransformer(Transformers.TO_LIST);
 		return q.getResultList();
 	}
@@ -72,7 +71,6 @@ public class DynamicQueryImpl implements DynamicQuery {
 	public <T> List<T> nativeQueryListModel(Class<T> resultClass,
 			String nativeSql, Object... params) {
 		Query q = createNativeQuery(nativeSql, params);
-		//@todo develop a new approach to result transformers
 		q.unwrap(SQLQuery.class).setResultTransformer(Transformers.aliasToBean(resultClass));
 		return q.getResultList();
 	}
@@ -81,7 +79,6 @@ public class DynamicQueryImpl implements DynamicQuery {
 	@Override
 	public <T> List<T> nativeQueryListMap(String nativeSql, Object... params) {
 		Query q = createNativeQuery(nativeSql, params);
-		//@todo develop a new approach to result transformers
 		q.unwrap(SQLQuery.class).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
 		return q.getResultList();
 	}

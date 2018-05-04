@@ -28,6 +28,7 @@ import com.itstyle.mail.common.queue.MailQueue;
 import com.itstyle.mail.common.util.Constants;
 import com.itstyle.mail.common.util.MailUtil;
 import com.itstyle.mail.entity.OaEmail;
+import com.itstyle.mail.repository.MailRepository;
 import com.itstyle.mail.service.IMailService;
 
 import freemarker.template.Configuration;
@@ -39,6 +40,8 @@ public class MailServiceImpl implements IMailService {
 	@Autowired
 	private DynamicQuery dynamicQuery;
 	@Autowired
+	private MailRepository mailRepository;
+	@Autowired
 	private JavaMailSender mailSender;//执行者
 	@Autowired
 	public Configuration configuration;//freemarker
@@ -46,6 +49,9 @@ public class MailServiceImpl implements IMailService {
 	private SpringTemplateEngine  templateEngine;//thymeleaf
 	@Value("${spring.mail.username}")
 	public String USER_NAME;//发送者
+	@Value("${server.path}")
+	public String PATH;//发送者
+	
 	
 	@Autowired
     private RedisTemplate<String, String> redisTemplate;
@@ -98,12 +104,16 @@ public class MailServiceImpl implements IMailService {
 		helper.setTo(mail.getEmail());
 		helper.setSubject(mail.getSubject());
 		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("content", mail.getContent());
+		model.put("mail", mail);
+		model.put("path", PATH);
 		Template template = configuration.getTemplate(mail.getTemplate()+".flt");
 		String text = FreeMarkerTemplateUtils.processTemplateIntoString(
 				template, model);
 		helper.setText(text, true);
 		mailSender.send(message);
+		mail.setContent(text);
+		OaEmail oaEmail = new OaEmail(mail);
+		mailRepository.save(oaEmail);
 	}
 	//弃用
 	@Override
@@ -131,8 +141,7 @@ public class MailServiceImpl implements IMailService {
 
 	@Override
 	public Result listMail(Email mail) {
-		String nativeSql = "SELECT * FROM oa_email";
-		List<OaEmail> list =  dynamicQuery.nativeQueryListMap(nativeSql, new Object[]{});
+		List<OaEmail> list =  mailRepository.findAll();
 		return Result.ok(list);
 	}
 }
