@@ -12,14 +12,28 @@ JDK1.7、Maven、Eclipse、SpringBoot1.5.2、spring-boot-starter-mail、spring-b
 
 ## 演示图
 
-登录(假的)
+
 ![输入图片说明](https://gitee.com/uploads/images/2018/0504/085208_6aca748c_87650.png "1.png")
 
-列表(真的)
+
 ![输入图片说明](https://gitee.com/uploads/images/2018/0504/085238_08e21dda_87650.png "2.png")
 
-查看(真的)
+
 ![输入图片说明](https://gitee.com/uploads/images/2018/0504/085245_4c151318_87650.png "3.png")
+
+## 启动说明
+
+
+
+- 项目中RPC框架使用的是当当维护的DubboX，现在阿里已经处于维护状态中，请自行更新
+
+- 配置Dubbo需要安装注册中心zookeeper: http://www.52itstyle.com/thread-19791-1-1.html
+
+- 如果不想使用Dubbo和安装zookeeper，又想启动看下效果，请注释掉 Application 类中的@ImportResource({"classpath:spring-context-dubbo.xml"})， 同时由于接口扫描注解使用的是Dubbo的 com.alibaba.dubbo.config.annotation.Service; 请自行替换成spring的 org.springframework.stereotype.Service;
+
+- Sql文件位于src/main/resource/sql下，自行导入即可、里面有一条测试数据
+
+- API: http://localhost:8080/springboot_mail/swagger-ui.html、可以自行测试发送邮件，前提是要修改application-dev.properties中的邮箱配置为自己可用的
 
 ## 流程图
 
