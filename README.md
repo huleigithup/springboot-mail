@@ -8,7 +8,7 @@
 
 ## 开发环境
 
-JDK1.7、Maven、Eclipse、SpringBoot1.5.2、spring-boot-starter-mail、spring-boot-starter-thymeleaf，spring-boot-starter-freemarker
+JDK1.7、Maven、Eclipse、SpringBoot1.5.9、spring-boot-starter-mail、spring-boot-starter-thymeleaf，spring-boot-starter-freemarker
 
 ## 演示图
 
