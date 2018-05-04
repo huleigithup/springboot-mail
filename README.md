@@ -10,6 +10,17 @@
 
 JDK1.7、Maven、Eclipse、SpringBoot1.5.2、spring-boot-starter-mail、spring-boot-starter-thymeleaf，spring-boot-starter-freemarker
 
+## 演示图
+
+登录(假的)
+![输入图片说明](https://gitee.com/uploads/images/2018/0504/085208_6aca748c_87650.png "1.png")
+
+列表(真的)
+![输入图片说明](https://gitee.com/uploads/images/2018/0504/085238_08e21dda_87650.png "2.png")
+
+查看(真的)
+![输入图片说明](https://gitee.com/uploads/images/2018/0504/085245_4c151318_87650.png "3.png")
+
 ## 流程图
 
 ### 平台架构
