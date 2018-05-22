@@ -26,7 +26,6 @@ import com.itstyle.mail.common.model.Email;
 import com.itstyle.mail.common.model.Result;
 import com.itstyle.mail.common.queue.MailQueue;
 import com.itstyle.mail.common.util.Constants;
-import com.itstyle.mail.common.util.MailUtil;
 import com.itstyle.mail.entity.OaEmail;
 import com.itstyle.mail.repository.MailRepository;
 import com.itstyle.mail.service.IMailService;
@@ -63,18 +62,16 @@ public class MailServiceImpl implements IMailService {
 	@Override
 	public void send(Email mail) throws Exception {
 		logger.info("发送邮件：{}",mail.getContent());
-		MailUtil mailUtil = new MailUtil();
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setFrom(USER_NAME);
 		message.setTo(mail.getEmail());
 		message.setSubject(mail.getSubject());
 		message.setText(mail.getContent());
-		mailUtil.start(mailSender, message);
+		mailSender.send(message);
 	}
 
 	@Override
 	public void sendHtml(Email mail) throws Exception {
-		MailUtil mailUtil = new MailUtil();
 		MimeMessage message = mailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message, true);
 		helper.setFrom(USER_NAME);
@@ -93,7 +90,7 @@ public class MailServiceImpl implements IMailService {
 				+ Constants.SF_FILE_SEPARATOR + "file"
 				+ Constants.SF_FILE_SEPARATOR + "关注科帮网获取更多源码.zip");
 		helper.addAttachment("科帮网", file);
-		mailUtil.startHtml(mailSender, message);
+		mailSender.send(message);
 	}
 
 	@Override
