@@ -1,4 +1,5 @@
 package com.itstyle.mail.common.util;
+import java.util.Properties;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -9,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 /**
  * 异步发送
  * 创建者 科帮网
@@ -60,4 +62,30 @@ public class MailUtil {
             }
         });
     }
+    /**
+     * 获取 Sender 多实例发送
+     * @return
+     */
+    public static JavaMailSenderImpl createMailSender(){
+        JavaMailSenderImpl sender = new JavaMailSenderImpl();
+        sender.setHost("smtp.mxhichina.com");
+        sender.setPort(25);
+        sender.setUsername("admin@52itstyle.com");
+        sender.setPassword("123456");
+        sender.setDefaultEncoding("Utf-8");
+        Properties p = new Properties();
+        p.setProperty("mail.smtp.timeout",1000+"");
+        p.setProperty("mail.smtp.auth","true");
+        sender.setJavaMailProperties(p);
+        return sender;
+    }
+	
+	public static void main(String[] args) {
+		SimpleMailMessage message = new SimpleMailMessage();
+		message.setFrom("admin@52itstyle.com");
+		message.setTo("345849402@qq.com");
+		message.setSubject("测试");
+		message.setText("测试");
+		createMailSender().send(message);
+	}
 }

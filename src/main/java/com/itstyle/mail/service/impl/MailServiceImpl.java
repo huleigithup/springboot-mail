@@ -74,7 +74,8 @@ public class MailServiceImpl implements IMailService {
 	public void sendHtml(Email mail) throws Exception {
 		MimeMessage message = mailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message, true);
-		helper.setFrom(USER_NAME);
+		//这里可以自定义发信名称比如：爪哇笔记
+		helper.setFrom(USER_NAME,"爪哇笔记");
 		helper.setTo(mail.getEmail());
 		helper.setSubject(mail.getSubject());
 		helper.setText(
@@ -97,7 +98,8 @@ public class MailServiceImpl implements IMailService {
 	public void sendFreemarker(Email mail) throws Exception {
 		MimeMessage message = mailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message, true);
-		helper.setFrom(USER_NAME);
+		//这里可以自定义发信名称比如：爪哇笔记
+		helper.setFrom(USER_NAME,"爪哇笔记");
 		helper.setTo(mail.getEmail());
 		helper.setSubject(mail.getSubject());
 		Map<String, Object> model = new HashMap<String, Object>();
