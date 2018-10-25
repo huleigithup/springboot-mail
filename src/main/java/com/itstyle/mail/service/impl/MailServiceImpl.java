@@ -15,6 +15,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Component;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import org.springframework.util.ResourceUtils;
 import org.thymeleaf.context.Context;
@@ -34,6 +35,7 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 
 @Service
+@Component
 public class MailServiceImpl implements IMailService {
 	private static final Logger logger = LoggerFactory.getLogger(MailServiceImpl.class);
 	@Autowired
@@ -105,7 +107,7 @@ public class MailServiceImpl implements IMailService {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("mail", mail);
 		model.put("path", PATH);
-		Template template = configuration.getTemplate(mail.getTemplate()+".flt");
+		Template template = configuration.getTemplate(mail.getTemplate());
 		String text = FreeMarkerTemplateUtils.processTemplateIntoString(
 				template, model);
 		helper.setText(text, true);
