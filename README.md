@@ -2,6 +2,18 @@
 
 邮件发送服务，文本，附件，模板，队列，多线程，定时任务实现多种功能！！！
 
+## 欢迎关注
+
+一个有温度的微信公众号，期待与你共同进步，分享美文，分享各种Java学习资源
+
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0809/181043_76e4d5b8_87650.png "1234.png")
+
+## 友情提示
+
+由于工作原因，项目正在完善中，随时更新日志，有疑问请留言或者加群
+
+- JAVA爱好者:<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=eba7a5d6f672c67cf942e08486e5102f0a0a6268206f873fef48a9d74f248de8"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JAVA爱好者" title="JAVA爱好者"></a>
+
 ## 开发环境
 
 JDK1.7、Maven、Eclipse、SpringBoot1.5.9、spring-boot-starter-mail、spring-boot-starter-thymeleaf、spring-boot-starter-freemarker、Dubbo、Zookeeper、Redis
@@ -40,16 +52,6 @@ JDK1.7、Maven、Eclipse、SpringBoot1.5.9、spring-boot-starter-mail、spring-b
 
 ### 进程内邮件队列
 ![邮件队列](https://git.oschina.net/uploads/images/2017/0804/135111_3b197795_87650.png "邮件队列.png")
-
-## 欢迎关注
-
-![输入图片说明](https://git.oschina.net/uploads/images/2017/0802/192404_8b5f9807_87650.jpeg "1801066129 (1).jpg")
-
-## 友情提示
-由于工作原因，项目正在完善中，随时更新日志，有疑问请留言或者加群
-
-- JAVA爱好者:<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=eba7a5d6f672c67cf942e08486e5102f0a0a6268206f873fef48a9d74f248de8"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JAVA爱好者" title="JAVA爱好者"></a>
-
 
 ## 项目结构
 
