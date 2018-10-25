@@ -2,13 +2,21 @@
 
 邮件发送服务，文本，附件，模板，队列，多线程，定时任务实现多种功能！！！
 
-[SpringBoot开发案例之整合mail发送服务](https://blog.52itstyle.com/archives/1264/)
+## 欢迎关注
 
-[SpringBoot开发案例之整合mail队列篇](https://blog.52itstyle.com/archives/1385/)
+一个有温度的微信公众号，期待与你共同进步，分享美文，分享各种Java学习资源
+
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0809/181043_76e4d5b8_87650.png "1234.png")
+
+## 友情提示
+
+由于工作原因，项目正在完善中，随时更新日志，有疑问请留言或者加群
+
+- JAVA爱好者:<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=eba7a5d6f672c67cf942e08486e5102f0a0a6268206f873fef48a9d74f248de8"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JAVA爱好者" title="JAVA爱好者"></a>
 
 ## 开发环境
 
-JDK1.7、Maven、Eclipse、SpringBoot1.5.9、spring-boot-starter-mail、spring-boot-starter-thymeleaf，spring-boot-starter-freemarker
+JDK1.7、Maven、Eclipse、SpringBoot1.5.9、spring-boot-starter-mail、spring-boot-starter-thymeleaf、spring-boot-starter-freemarker、Dubbo、Zookeeper、Redis
 
 ## 演示图
 
@@ -23,17 +31,19 @@ JDK1.7、Maven、Eclipse、SpringBoot1.5.9、spring-boot-starter-mail、spring-b
 
 ## 启动说明
 
-
-
 - 项目中RPC框架使用的是当当维护的DubboX，现在阿里已经处于维护状态中，请自行更新
 
 - 配置Dubbo需要安装注册中心zookeeper: http://www.52itstyle.com/thread-19791-1-1.html
 
-- 如果不想使用Dubbo和安装zookeeper，又想启动看下效果，请注释掉 Application 类中的@ImportResource({"classpath:spring-context-dubbo.xml"})， 同时由于接口扫描注解使用的是Dubbo的 com.alibaba.dubbo.config.annotation.Service; 请自行替换成spring的 org.springframework.stereotype.Service;
+- 如果不想使用Dubbo和安装zookeeper，又想启动看下效果，请注释掉 Application 类中的@ImportResource({"classpath:spring-context-dubbo.xml"})， 同时由于接口扫描注解使用的是Dubbo的 com.alibaba.dubbo.config.annotation.Service; 请自行替换成spring的 org.springframework.stereotype.Service(废弃);
 
 - Sql文件位于src/main/resource/sql下，自行导入即可、里面有一条测试数据
 
-- API: http://localhost:8080/springboot_mail/swagger-ui.html、可以自行测试发送邮件，前提是要修改application-dev.properties中的邮箱配置为自己可用的
+- API: http://localhost:8080/springboot_mail/swagger-ui.html、 可以自行测试发送邮件，前提是要修改application-dev.properties中的邮箱配置为自己可用的
+
+- 2018-10-25 原spring-context-dubbo.xml 配置 替换为 dubbo-spring-boot-starter 2.0.0
+
+- 执行 com.itstyle.mail.test.SpringbootMailApplication main 方法
 
 ## 流程图
 
@@ -42,18 +52,6 @@ JDK1.7、Maven、Eclipse、SpringBoot1.5.9、spring-boot-starter-mail、spring-b
 
 ### 进程内邮件队列
 ![邮件队列](https://git.oschina.net/uploads/images/2017/0804/135111_3b197795_87650.png "邮件队列.png")
-
-## 欢迎关注
-
-![输入图片说明](https://git.oschina.net/uploads/images/2017/0802/192404_8b5f9807_87650.jpeg "1801066129 (1).jpg")
-
-## 友情提示
-由于工作原因，项目正在完善中，随时更新日志，有疑问请留言或者加群
-
-- JAVA爱好者④:<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=eba7a5d6f672c67cf942e08486e5102f0a0a6268206f873fef48a9d74f248de8"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JAVA爱好者" title="JAVA爱好者"></a>
-- JAVA爱好者①:<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=f316b04ba30f31190c0d8120b5c54acf245299726b4450fb6fc64753dd546bf8"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JAVA爱好者①" title="JAVA爱好者①"></a>(满)
-- JAVA爱好者②:<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=b2fc105d5cf11231cd863dc829b82f50454b693ad20b892a362de5adbcc9b0b3"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JAVA爱好者②" title="JAVA爱好者②"></a>(满)
-- JAVA爱好者③:<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=cbee3cb06364401522ea90776a1bd83cdbbed20622b93a37158d41460537db96"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JAVA爱好者③" title="JAVA爱好者③"></a>(满)
 
 ## 项目结构
 
@@ -149,16 +147,18 @@ JDK1.7、Maven、Eclipse、SpringBoot1.5.9、spring-boot-starter-mail、spring-b
 - 加入定时任务统计失败邮件定时重新发送
 - 多环境配置文件实现
 
-![输入图片说明](https://blog.52itstyle.com/usr/uploads/58ad45c0b9e21.gif "在这里输入图片标题")
+# 20181024
+
+- 原spring-context-dubbo.xml 配置 替换为 dubbo-spring-boot-starter 2.0.0
+
+
+## 推荐阅读
+
+[SpringBoot开发案例之整合mail发送服务](https://blog.52itstyle.com/archives/1264/)
+
+[SpringBoot开发案例之整合mail队列篇](https://blog.52itstyle.com/archives/1385/)
+
 
 作者： 小柒2012
 
 欢迎关注： https://blog.52itstyle.com
-
-## 测试
-
-
-- 修改 application-dev.properties 中自己的邮件配置 同时配置dubbo.registry.address地址
-- 执行 com.itstyle.mail.test.SpringbootMailApplication main 方法
-
-
