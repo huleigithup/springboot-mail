@@ -33,7 +33,7 @@ JDK1.7、Maven、Eclipse、SpringBoot1.5.9、spring-boot-starter-mail、spring-b
 
 - 项目中RPC框架使用的是当当维护的DubboX，现在阿里已经处于维护状态中，请自行更新
 
-- 配置Dubbo需要安装注册中心zookeeper: http://www.52itstyle.com/thread-19791-1-1.html
+- 配置Dubbo需要安装注册中心zookeeper: http://www.52itstyle.top/thread-19791-1-1.html
 
 - 如果不想使用Dubbo和安装zookeeper，又想启动看下效果，请注释掉 Application 类中的@ImportResource({"classpath:spring-context-dubbo.xml"})， 同时由于接口扫描注解使用的是Dubbo的 com.alibaba.dubbo.config.annotation.Service; 请自行替换成spring的 org.springframework.stereotype.Service(废弃);
 
@@ -154,11 +154,11 @@ JDK1.7、Maven、Eclipse、SpringBoot1.5.9、spring-boot-starter-mail、spring-b
 
 ## 推荐阅读
 
-[SpringBoot开发案例之整合mail发送服务](https://blog.52itstyle.com/archives/1264/)
+[SpringBoot开发案例之整合mail发送服务](https://blog.52itstyle.vip/archives/1264/)
 
-[SpringBoot开发案例之整合mail队列篇](https://blog.52itstyle.com/archives/1385/)
+[SpringBoot开发案例之整合mail队列篇](https://blog.52itstyle.vip/archives/1385/)
 
 
 作者： 小柒2012
 
-欢迎关注： https://blog.52itstyle.com
+欢迎关注： https://blog.52itstyle.vip
