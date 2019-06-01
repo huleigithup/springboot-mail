@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 
 import com.alibaba.dubbo.spring.boot.annotation.EnableDubboConfiguration;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
 /**
  * 启动类
  * 创建者 科帮网 https://blog.52itstyle.com
@@ -22,9 +24,9 @@ import com.alibaba.dubbo.spring.boot.annotation.EnableDubboConfiguration;
  * 3）原 zkclient 0.6 替换为 curator-recipes 4.0.1
  * 4）原 zookeeper 3.4.6 升级为 zookeeper 3.5.3
  */
-@SpringBootApplication
 @EnableDubboConfiguration
-@ImportResource({"classpath:spring-context-task.xml"})
+@EnableScheduling
+@SpringBootApplication
 public class Application  {
 	private static final Logger logger = LoggerFactory.getLogger(Application.class);
 	

@@ -1,5 +1,6 @@
 package com.itstyle.mail.common.task;
 
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,9 +9,10 @@ import org.springframework.stereotype.Component;
  * 创建时间	2017年7月21日
  *
  */
-@Component("sendMail")
+@Component
 public class SendMail {
+	@Scheduled(cron="*/6 * * * * ?")
 	public void sendMail() {
-		
+		System.out.println("邮件发送");
 	}
 }

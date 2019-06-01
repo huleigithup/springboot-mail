@@ -1,4 +1,5 @@
 package com.itstyle.mail.web;
+import com.alibaba.dubbo.config.annotation.Reference;
 import io.swagger.annotations.Api;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import com.itstyle.mail.service.IMailService;
 @RequestMapping("/mail")
 public class mailController {
 	
-	@Autowired
+	@Reference(check = false)
 	private IMailService mailService;
 	
 	@PostMapping("send")

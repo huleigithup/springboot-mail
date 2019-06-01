@@ -6,9 +6,9 @@ import java.util.concurrent.Executors;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.itstyle.mail.common.model.Email;
@@ -21,7 +21,7 @@ import com.itstyle.mail.service.IMailService;
 @Component
 public class ConsumeMailQueue {
 	private static final Logger logger = LoggerFactory.getLogger(ConsumeMailQueue.class);
-	@Autowired
+	@Reference(check = false)
 	IMailService mailService;
 	
 	@PostConstruct

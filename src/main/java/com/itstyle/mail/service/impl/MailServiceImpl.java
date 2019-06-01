@@ -7,6 +7,7 @@ import java.util.Map;
 
 import javax.mail.internet.MimeMessage;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,6 @@ import org.springframework.util.ResourceUtils;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.itstyle.mail.common.dynamicquery.DynamicQuery;
 import com.itstyle.mail.common.model.Email;
 import com.itstyle.mail.common.model.Result;
@@ -33,6 +33,7 @@ import com.itstyle.mail.service.IMailService;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
+
 
 @Service
 @Component
