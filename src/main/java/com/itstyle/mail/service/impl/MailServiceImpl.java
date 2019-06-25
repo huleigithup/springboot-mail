@@ -35,6 +35,8 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 
 
+@Service
+@Component
 public class MailServiceImpl implements IMailService {
 	private static final Logger logger = LoggerFactory.getLogger(MailServiceImpl.class);
 	@Autowired
