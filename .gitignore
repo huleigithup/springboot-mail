@@ -11,3 +11,5 @@
 *.classpath
 *apiclient_cert.p12
 /bin/
+/.idea/
+spring-boot-mail.iml

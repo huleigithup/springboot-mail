@@ -16,7 +16,7 @@
 
 ## 开发环境
 
-JDK1.7、Maven、Eclipse、SpringBoot1.5.9、spring-boot-starter-mail、spring-boot-starter-thymeleaf、spring-boot-starter-freemarker、Dubbo、Zookeeper、Redis
+JDK1.8、Maven、Eclipse、SpringBoot1.5.21、spring-boot-starter-mail、spring-boot-starter-thymeleaf、spring-boot-starter-freemarker、Dubbo、Zookeeper、Redis
 
 ## 演示图
 
@@ -39,7 +39,7 @@ JDK1.7、Maven、Eclipse、SpringBoot1.5.9、spring-boot-starter-mail、spring-b
 
 - Sql文件位于src/main/resource/sql下，自行导入即可、里面有一条测试数据
 
-- API: http://localhost:8080/springboot_mail/swagger-ui.html、 可以自行测试发送邮件，前提是要修改application-dev.properties中的邮箱配置为自己可用的
+- API: http://localhost:8080/swagger-ui.html、 可以自行测试发送邮件，前提是要修改application-dev.properties中的邮箱配置为自己可用的
 
 - 2018-10-25 原spring-context-dubbo.xml 配置 替换为 dubbo-spring-boot-starter 2.0.0
 
