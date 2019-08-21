@@ -1,10 +1,9 @@
 package com.itstyle.mail.service;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.itstyle.mail.common.model.Email;
 import com.itstyle.mail.common.model.Result;
 
-@Service
+
 public interface IMailService {
 	 /**
 	  * 纯文本
