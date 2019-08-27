@@ -16,7 +16,7 @@
 
 ## 开发环境
 
-JDK1.8、Maven、Eclipse、SpringBoot1.5.21、spring-boot-starter-mail、spring-boot-starter-thymeleaf、spring-boot-starter-freemarker、Dubbo、Zookeeper、Redis
+JDK1.8、Maven、Eclipse、SpringBoot1.5.21、spring-boot-starter-mail、spring-boot-starter-thymeleaf、spring-boot-starter-freemarker、Dubbo、zookeeper-3.5.3、Redis
 
 ## 演示图
 
