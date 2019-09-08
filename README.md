@@ -16,7 +16,7 @@
 
 ## 开发环境
 
-JDK1.8、Maven、Eclipse、SpringBoot1.5.21、spring-boot-starter-mail、spring-boot-starter-thymeleaf、spring-boot-starter-freemarker、Dubbo、zookeeper-3.5.3、Redis
+JDK1.8、Maven、Eclipse、SpringBoot 2.1.6、spring-boot-starter-mail、spring-boot-starter-thymeleaf、spring-boot-starter-freemarker、Dubbo、zookeeper-3.5.3、Redis
 
 ## 演示图
 
@@ -44,6 +44,8 @@ JDK1.8、Maven、Eclipse、SpringBoot1.5.21、spring-boot-starter-mail、spring-
 - 2018-10-25 原spring-context-dubbo.xml 配置 替换为 dubbo-spring-boot-starter 2.0.0
 
 - 执行 com.itstyle.mail.test.SpringbootMailApplication main 方法
+
+
 
 ## 流程图
 
@@ -150,6 +152,11 @@ JDK1.8、Maven、Eclipse、SpringBoot1.5.21、spring-boot-starter-mail、spring-
 # 20181024
 
 - 原spring-context-dubbo.xml 配置 替换为 dubbo-spring-boot-starter 2.0.0
+
+# 2019-09-08 
+- Dubbo 升级为 Apache 组织
+- Dubbo 2.6.2 升级为  Apache Dubbo 2.7.3
+- 原 com.alibaba.spring.boot dubbo-spring-boot-starter 2.0.0 升级为  org.apache.dubbo dubbo-spring-boot-starter 2.7.3
 
 
 ## 推荐阅读
