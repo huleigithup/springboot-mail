@@ -3,7 +3,6 @@ package com.itstyle.mail.service;
 import com.itstyle.mail.common.model.Email;
 import com.itstyle.mail.common.model.Result;
 
-
 public interface IMailService {
 	 /**
 	  * 纯文本

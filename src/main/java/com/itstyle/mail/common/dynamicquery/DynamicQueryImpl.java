@@ -58,31 +58,7 @@ public class DynamicQueryImpl implements DynamicQuery {
 		}
 		return q;
 	}
-	@SuppressWarnings({ "unchecked"})
-	@Override
-	public <T> List<T> nativeQueryList(String nativeSql, Object... params) {
-		Query q = createNativeQuery(nativeSql, params);
-		q.unwrap(SQLQuery.class).setResultTransformer(Transformers.TO_LIST);
-		return q.getResultList();
-	}
-	
-	@SuppressWarnings({ "unchecked"})
-	@Override
-	public <T> List<T> nativeQueryListModel(Class<T> resultClass,
-			String nativeSql, Object... params) {
-		Query q = createNativeQuery(nativeSql, params);
-		q.unwrap(SQLQuery.class).setResultTransformer(Transformers.aliasToBean(resultClass));
-		return q.getResultList();
-	}
 
-	@SuppressWarnings({ "unchecked"})
-	@Override
-	public <T> List<T> nativeQueryListMap(String nativeSql, Object... params) {
-		Query q = createNativeQuery(nativeSql, params);
-		q.unwrap(SQLQuery.class).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
-		return q.getResultList();
-	}
-	
 	@Override
 	public Long nativeQueryCount(String nativeSql, Object... params) {
 		Object count = createNativeQuery(nativeSql, params).getSingleResult();

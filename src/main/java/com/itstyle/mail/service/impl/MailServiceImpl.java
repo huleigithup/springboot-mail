@@ -7,7 +7,8 @@ import java.util.Map;
 
 import javax.mail.internet.MimeMessage;
 
-import com.alibaba.dubbo.config.annotation.Service;
+import org.apache.dubbo.config.annotation.Service;
+import org.apache.dubbo.config.spring.context.annotation.DubboComponentScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +17,10 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.stereotype.Component;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import org.springframework.util.ResourceUtils;
 import org.thymeleaf.context.Context;
-import org.thymeleaf.spring4.SpringTemplateEngine;
+import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import com.itstyle.mail.common.dynamicquery.DynamicQuery;
 import com.itstyle.mail.common.model.Email;
@@ -34,9 +34,7 @@ import com.itstyle.mail.service.IMailService;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 
-
-@Component
-@Service
+@Service(version = "1.0.0")
 public class MailServiceImpl implements IMailService {
 	private static final Logger logger = LoggerFactory.getLogger(MailServiceImpl.class);
 	@Autowired
