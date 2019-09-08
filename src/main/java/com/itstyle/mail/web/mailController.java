@@ -1,5 +1,5 @@
 package com.itstyle.mail.web;
-import com.alibaba.dubbo.config.annotation.Reference;
+import org.apache.dubbo.config.annotation.Reference;
 import io.swagger.annotations.Api;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,8 +14,8 @@ import com.itstyle.mail.service.IMailService;
 @RestController
 @RequestMapping("/mail")
 public class mailController {
-	
-	@Reference(check = false)
+
+	@Reference(version = "1.0.0")
 	private IMailService mailService;
 	
 	@PostMapping("send")
