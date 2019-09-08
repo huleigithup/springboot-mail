@@ -8,7 +8,6 @@ import java.util.Map;
 import javax.mail.internet.MimeMessage;
 
 import org.apache.dubbo.config.annotation.Service;
-import org.apache.dubbo.config.spring.context.annotation.DubboComponentScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
