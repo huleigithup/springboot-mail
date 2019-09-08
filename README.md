@@ -145,6 +145,7 @@ JDK1.8、Maven、Eclipse、SpringBoot 2.1.6、spring-boot-starter-mail、spring-
 对比测试，建议使用Freemarker模版
 
 # 20170721
+
 - 加入DubboX对外提供发送服务
 - 加入定时任务统计失败邮件定时重新发送
 - 多环境配置文件实现
@@ -153,7 +154,7 @@ JDK1.8、Maven、Eclipse、SpringBoot 2.1.6、spring-boot-starter-mail、spring-
 
 - 原spring-context-dubbo.xml 配置 替换为 dubbo-spring-boot-starter 2.0.0
 
-# 2019-09-08 
+# 20190908 
 - Dubbo 升级为 Apache 组织
 - Dubbo 2.6.2 升级为  Apache Dubbo 2.7.3
 - 原 com.alibaba.spring.boot dubbo-spring-boot-starter 2.0.0 升级为  org.apache.dubbo dubbo-spring-boot-starter 2.7.3
