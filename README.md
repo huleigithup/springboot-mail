@@ -2,6 +2,9 @@
 
 邮件发送服务，文本，附件，模板，队列，多线程，定时任务实现多种功能！！！
 
+
+Spring-Boot2.0 + Nacos注册中心版：https://gitee.com/52itstyle/spring-boot-mail/tree/spring-boot-mail-nacos
+
 ## 欢迎关注
 
 一个有温度的微信公众号，期待与你共同进步，分享美文，分享各种Java学习资源
