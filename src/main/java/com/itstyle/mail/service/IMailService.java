@@ -6,44 +6,44 @@ import com.itstyle.mail.common.model.Result;
 public interface IMailService {
 	 /**
 	  * 纯文本
-	  * @Author  科帮网
+	  * @Author  爪哇笔记
 	  * @param mail
 	  * @throws Exception  void
 	  * @Date	2017年7月20日
 	  * 更新日志
-	  * 2017年7月20日  科帮网 首次创建
+	  * 2017年7月20日  爪哇笔记 首次创建
 	  */
 	 void send(Email mail) throws Exception;
 	 /**
 	  * 富文本
-	  * @Author  科帮网
+	  * @Author  爪哇笔记
 	  * @param mail
 	  * @throws Exception  void
 	  * @Date	2017年7月20日
 	  * 更新日志
-	  * 2017年7月20日  科帮网 首次创建
+	  * 2017年7月20日  爪哇笔记 首次创建
 	  *
 	  */
 	  void sendHtml(Email mail) throws Exception;
 	 /**
 	  * 模版发送 freemarker
-	  * @Author  科帮网
+	  * @Author  爪哇笔记
 	  * @param mail
 	  * @throws Exception  void
 	  * @Date	2017年7月20日
 	  * 更新日志
-	  * 2017年7月20日  科帮网 首次创建
+	  * 2017年7月20日  爪哇笔记 首次创建
 	  *
 	  */
 	  void sendFreemarker(Email mail) throws Exception;
 	 /**
 	  * 模版发送 thymeleaf(弃用、需要配合模板)
-	  * @Author  科帮网
+	  * @Author  爪哇笔记
 	  * @param mail
 	  * @throws Exception  void
 	  * @Date	2017年7月20日
 	  * 更新日志
-	  * 2017年7月20日  科帮网 首次创建
+	  * 2017年7月20日  爪哇笔记 首次创建
 	  *
 	  */
 	 void sendThymeleaf(Email mail) throws Exception;
@@ -54,13 +54,13 @@ public interface IMailService {
 	  * @throws Exception  void
 	  * @Date	2017年8月4日
 	  * 更新日志
-	  * 2017年8月4日  科帮网 首次创建
+	  * 2017年8月4日  爪哇笔记 首次创建
 	  *
 	  */
 	 void sendQueue(Email mail) throws Exception;
 	 /**
 	  * Redis 队列
-	  * @Author  科帮网
+	  * @Author  爪哇笔记
 	  * @param mail
 	  * @throws Exception  void
 	  * @Date	2017年8月13日

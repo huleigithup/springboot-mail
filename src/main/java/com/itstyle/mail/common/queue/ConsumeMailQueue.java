@@ -15,13 +15,15 @@ import com.itstyle.mail.common.model.Email;
 import com.itstyle.mail.service.IMailService;
 /**
  * 消费队列
- * 创建者 科帮网
+ * 创建者 爪哇笔记
  * 创建时间	2017年8月4日
  */
 @Component
 public class ConsumeMailQueue {
+
 	private static final Logger logger = LoggerFactory.getLogger(ConsumeMailQueue.class);
-	@Reference(check = false)
+
+    @Reference(check = false,version = "1.0.0")
 	IMailService mailService;
 	
 	@PostConstruct

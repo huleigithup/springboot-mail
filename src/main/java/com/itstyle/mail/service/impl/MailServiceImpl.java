@@ -102,7 +102,7 @@ public class MailServiceImpl implements IMailService {
 		helper.setFrom(USER_NAME,"爪哇笔记");
 		helper.setTo(mail.getEmail());
 		helper.setSubject(mail.getSubject());
-		Map<String, Object> model = new HashMap<String, Object>();
+		Map<String, Object> model = new HashMap<>();
 		model.put("mail", mail);
 		model.put("path", PATH);
 		Template template = configuration.getTemplate(mail.getTemplate());
