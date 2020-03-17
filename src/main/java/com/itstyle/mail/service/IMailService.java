@@ -69,7 +69,11 @@ public interface IMailService {
 	  *
 	  */
 	 void sendRedisQueue(Email mail) throws Exception;
-	 
-	 
+
+    /**
+     * 邮件列表
+     * @param mail
+     * @return
+     */
 	 Result listMail(Email mail);
 }

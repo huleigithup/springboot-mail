@@ -32,7 +32,12 @@ public class mailController {
 		}
 		return  Result.ok();
 	}
-	
+
+    /**
+     * 列表
+     * @param mail
+     * @return
+     */
 	@PostMapping("list")
 	public Result list(Email mail) {
 		return mailService.listMail(mail);
