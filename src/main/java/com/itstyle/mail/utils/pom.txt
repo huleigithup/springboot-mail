@@ -1,0 +1,32 @@
+ <!--Outlook保存的.Msg格式文件解析-->
+        <dependency>
+            <groupId>org.simplejavamail</groupId>
+            <artifactId>outlook-message-parser</artifactId>
+            <version>1.7.4</version>
+        </dependency>
+        <!--    java 对.EML格式邮件文件解析-->
+        <!-- https://mvnrepository.com/artifact/org.apache.james/apache-mime4j-dom -->
+        <dependency>
+            <groupId>org.apache.james</groupId>
+            <artifactId>apache-mime4j-dom</artifactId>
+            <version>0.8.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.james/apache-mime4j-core -->
+        <dependency>
+            <groupId>org.apache.james</groupId>
+            <artifactId>apache-mime4j-core</artifactId>
+            <version>0.8.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.james/apache-mime4j-storage -->
+        <dependency>
+            <groupId>org.apache.james</groupId>
+            <artifactId>apache-mime4j-storage</artifactId>
+            <version>0.8.3</version>
+        </dependency>
+        <!-- jsoup 是一款 Java 的 HTML 解析器，可直接解析某个 URL 地址、HTML 文本内容。它提供了一套非常省力的 API-->
+        <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.13.1</version>
+        </dependency>

@@ -8,43 +8,53 @@ import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
-@Api(tags ="邮件管理")
+@Api(tags = "邮件管理")
 @RestController
 @RequestMapping("/mail")
 public class mailController {
 
-	@Reference(version = "1.0.0")
-	private IMailService mailService;
+    @Reference(version = "1.0.0")
+    private IMailService mailService;
 
     /**
      * 简单测试
+     *
      * @param mail
      * @return
      */
-	@PostMapping("send")
-	public Result send(Email mail) {
-		try {
-			mailService.sendFreemarker(mail);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return  Result.error();
-		}
-		return  Result.ok();
-	}
+    @PostMapping("send")
+    public Result send(Email mail) {
+        try {
+            mailService.sendFreemarker(mail);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.error();
+        }
+        return Result.ok();
+    }
+
+    @PostMapping("parse/msg")
+    public Result parseMsg(MultipartFile file){
+        mailService.parseMsg(file);
+        return Result.ok();
+    }
 
     /**
      * 列表
+     *
      * @param mail
      * @return
      */
-	@PostMapping("list")
-	public Result list(Email mail) {
-		return mailService.listMail(mail);
-	}
+    @PostMapping("list")
+    public Result list(Email mail) {
+        return mailService.listMail(mail);
+    }
 
     /**
      * 队列测试
+     *
      * @param mail
      * @return
      */
@@ -55,6 +65,6 @@ public class mailController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return  Result.ok();
+        return Result.ok();
     }
 }

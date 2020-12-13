@@ -1,6 +1,9 @@
 package com.itstyle.mail;
 
 import org.apache.dubbo.config.spring.context.annotation.DubboComponentScan;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -33,9 +36,47 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @DubboComponentScan(basePackages = "com.itstyle.mail.service.impl")
 public class Application  {
 	private static final Logger logger = LoggerFactory.getLogger(Application.class);
+	public static final String SF_FILE_SEPARATOR = System.getProperty("file.separator");
+	public static final String SF_LINE_SEPARATOR = System.getProperty("line.separator");
+	public static final String SF_PATH_SEPARATOR = System.getProperty("path.separator");
 	
 	public static void main(String[] args){
 		SpringApplication.run(Application.class, args);
+		// Jsoup 解析网页
+		Document document = Jsoup.parse("<!DOCTYPE html>\n" +
+				"<html lang=\"en\">\n" +
+				"<head>\n" +
+				"    <meta charset=\"UTF-8\">\n" +
+				"    <title>Title</title>\n" +
+				"</head>\n" +
+				"<body>\n" +
+				"    <table>\n" +
+				"    <p style=\"text-align:center \">功课表</p>\n" +
+				"    <tr>\n" +
+				"        <th>语文</th>\n" +
+				"        <td>7:00-7:40</td>\n" +
+				"        <td>7:50-8:30</td>\n" +
+				"    </tr>\n" +
+				"    <tr>\n" +
+				"        <th>数学</th>\n" +
+				"        <td>7:00-7:40</td>\n" +
+				"        <td>7:50-8:30</td>\n" +
+				"    </tr>\n" +
+				"    <tr>\n" +
+				"        <th>英文</th>\n" +
+				"        <td>7:00-7:40</td>\n" +
+				"        <td>7:50-8:30</td>\n" +
+				"    </tr>\n" +
+				"\n" +
+				"</table>\n" +
+				"</body>\n" +
+				"</html>");
+		Elements tr = document.getElementsByTag("tr");
+		String html = tr.html();
+		System.out.println("html = " + html);
+		String text = tr.text();
+		System.out.println("text = " + text);
 		logger.info("邮件服务项目启动");
+
 	}
 }

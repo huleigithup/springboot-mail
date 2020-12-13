@@ -1,16 +1,15 @@
 package com.itstyle.mail.common.util;
-import java.util.Properties;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import javax.mail.internet.MimeMessage;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+
+import javax.mail.internet.MimeMessage;
+import java.util.Properties;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 异步发送
  * 创建者 科帮网
@@ -83,7 +82,8 @@ public class MailUtil {
 	public static void main(String[] args) {
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setFrom("admin@52itstyle.com");
-		message.setTo("345849402@qq.com");
+//		message.setTo("2295742979@qq.com");
+		message.setTo("hl809490705@gmailcom");
 		message.setSubject("测试");
 		message.setText("测试");
 		createMailSender().send(message);
